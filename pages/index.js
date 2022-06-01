@@ -39,4 +39,4 @@ parser.on('data', function(data) {
 //abrindo na porta:
 server.listen(3000);
 
-export default index;
+export default server;
