@@ -4,14 +4,7 @@ var file_2 = "https://docs.google.com/spreadsheets/d/1zvEt9-82MyFcREDqUVxHxOMyxR
 import axios from 'axios'
 import fs from 'fs'
 
-var arquivo_csv =  fs.readFileSync(file, 'utf-8');
-/*
-var teste = axios({
-        method: 'get',
-        url: file_2,
-        responseType: 'stream'
-    });
-    */
+const arquivo_csv =  fs.readFileSync(file, 'utf-8');
 const teste = await axios.get(`${file_2}`);
 
 console.log(teste);
