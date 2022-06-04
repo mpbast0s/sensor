@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev"
   },
   "repository": {
@@ -18,10 +19,9 @@
   },
   "homepage": "https://github.com/mpbast0s/sensor#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "next": "^12.1.6",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "serialport": "^10.4.0",
-    "socket.io": "^4.5.1"
+    "react-dom": "^18.1.0"
   }
 }
