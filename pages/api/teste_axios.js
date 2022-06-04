@@ -2,8 +2,9 @@ var file = 'C:\\Users\\Usuario\\Desktop\\1° período - ufrp\\formula\\sensores_
 var file_2 = "https://docs.google.com/spreadsheets/d/1zvEt9-82MyFcREDqUVxHxOMyxREG_91ev2k0OzjfE00/export?format=csv"
 
 import axios from 'axios'
+import fs from 'fs'
 
-//var arquivo_csv =  fs.readFileSync(file, 'utf-8');
+var arquivo_csv =  fs.readFileSync(file, 'utf-8');
 /*
 var teste = axios({
         method: 'get',
@@ -15,12 +16,12 @@ const teste = await axios.get(`${file_2}`);
 
 console.log(teste);
 
-function Csvtojson(request, response){
-    //console.log(arquivo_csv);
+function teste_axios(request, response){
 
     response.json({
-        data: teste
+        data: teste,
+        data_2: arquivo_csv
     })
 }
 
-export default Csvtojson;
+export default teste_axios;
