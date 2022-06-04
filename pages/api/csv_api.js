@@ -5,10 +5,8 @@ import * as path from 'path'
 import axios from 'axios'
 
 var arquivo_csv =  fs.readFileSync(file, 'utf-8');
-var teste = axios({
-        method: 'get',
-        url: file_2
-    });
+const teste = await axios.get(`${file_2}`); 
+
 console.log(teste);
 
 function Csvtojson(request, response){
