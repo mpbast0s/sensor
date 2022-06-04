@@ -15,7 +15,7 @@ function Csvtojson(request, response){
     //console.log(arquivo_csv);
 
     response.json({
-        arquivo-csv: arquivo_csv 
+        arquivocsv: arquivo_csv 
     })
 }
 
