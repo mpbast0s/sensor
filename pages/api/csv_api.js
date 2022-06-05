@@ -1,20 +1,14 @@
-var file = 'C:\\Users\\Usuario\\Desktop\\1° período - ufrp\\formula\\sensores_do_chicote\\acelerometro\\teste_bd.csv';
-var file_2 = "https://docs.google.com/spreadsheets/d/1zvEt9-82MyFcREDqUVxHxOMyxREG_91ev2k0OzjfE00/export?format=csv"
-import * as fs from 'fs'
-import * as path from 'path'
-import axios from 'axios'
+const file_2 = "https://docs.google.com/spreadsheets/d/1zvEt9-82MyFcREDqUVxHxOMyxREG_91ev2k0OzjfE00/export?format=csv"
 
-var arquivo_csv =  fs.readFileSync(file, 'utf-8');
-const teste = await axios.get(`${file_2}`); 
-
-console.log(teste);
-
-function Csvtojson(request, response){
-    //console.log(arquivo_csv);
+async function csv(request, response){
+    const csv_fetch = await fetch(file_2);
+    const csv_texto = await csv_fetch.text();
+    const valores = csv_texto.split('\r\n');
+    const indice = valores.length - 1;
 
     response.json({
-        arquivocsv: arquivo_csv 
+        ultimo_lido: valores[indice]
     })
-}
-
-export default Csvtojson;
+  }
+  
+  export default csv;
