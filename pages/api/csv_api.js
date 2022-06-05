@@ -6,6 +6,8 @@ async function csv(request, response){
     const valores = csv_texto.split('\r\n');
     const indice = valores.length - 1;
 
+    response.setHeader('Cache-Control', 's-maxage=1, stale-while-reavalidate');
+
     response.json({
         ultimo_lido: valores[indice]
     })
