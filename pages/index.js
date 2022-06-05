@@ -1,4 +1,7 @@
-const url = "https://sensor-pied.vercel.app/api/csv_api"; 
+import { useState, useEffect } from 'react'
+
+const url = "https://sensor-pied.vercel.app/api/csv_api";
+
 export async function getServerSideProps() {
     const dados_fetch = await fetch(url);
     const dados_json= await dados_fetch.json();
@@ -8,11 +11,14 @@ export async function getServerSideProps() {
 }
 
 function Home({ dados }) {
-    //const dado = fetch('./api/csv_api');
-    //const dado_j = dado.json();
+    //const [loading, setLoading] = useState(false);
 
     return (
-        <div> <h1> teste { dados }</h1></div>
-    )}
+            <>
+            <h1>testee { dados } </h1>
+            </>
+    )
+}
+
 
 export default Home
